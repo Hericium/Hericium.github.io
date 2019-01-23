@@ -1,7 +1,7 @@
 ---
-title: 微信小程序ase加密
+title: 微信小程序aes加密
 date: 2019-01-23 13:55:19
-tags: 编程
+tags: 前端 微信 小程序
 ---
 
 > 之前在segmentfalut社区写得，移到自己的博客来~~
