@@ -1,5 +1,5 @@
 ---
-title: 手把手教你搭建gitbook和访问认证
+title: 搭建gitbook和访问认证
 date: 2019-02-18 17:58:22
 tags: node 
 ---
