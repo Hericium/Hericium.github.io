@@ -1,8 +1,9 @@
 ---
 title: 手把手教你搭建gitbook和访问认证
 date: 2019-02-18 17:58:22
-tags: 工具
+tags: node 
 ---
+
 > 相信大家都或多或少的都接触过gitbook。gitbook 首先是一个软件，正如上面定义的那样，它使用 Git 和 Markdown 来编排书本，如果用户没有听过 Git 和 Markdown，那么 gitbook 可能不适合你。废话不多说，干起来。
 
 ## 1 gitbook安装
