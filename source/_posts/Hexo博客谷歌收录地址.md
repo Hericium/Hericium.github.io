@@ -24,7 +24,7 @@ sitemap:
 ```
 保存文件，重新部署博客，查看：duansm.top/sitemap.xml。显示如下信息表示sitemap生成成功。
 
-![](/images/20190821110645.jpg)
+![](https://pxw-my.oss-cn-hangzhou.aliyuncs.com/blog/20190821140945.jpg)
 
 ## 二.google收录
 
@@ -33,17 +33,16 @@ sitemap:
 
 ### 2.填写地址，如果是要一级域名，写第一个；如果是要二级域名，就填第二个
 
-![](/images/20190821111037.jpg)
+![](https://pxw-my.oss-cn-hangzhou.aliyuncs.com/blog/20190821140943.jpg)
 
 ### 3.验证，到域名备案商去验证
 
-![](/images/20190821111231.jpg)
+![](https://pxw-my.oss-cn-hangzhou.aliyuncs.com/blog/20190821140938.jpg)
 
 ### 4.添加 sitemap.xml战点地址
 
-![](/images/20190821111112.jpg)
+![](https://pxw-my.oss-cn-hangzhou.aliyuncs.com/blog/20190821140942.jpg)
 
 ### 5.效果
 
-![](/images/20190821111139.jpg)
-
+![](https://pxw-my.oss-cn-hangzhou.aliyuncs.com/blog/20190821140944.jpg)

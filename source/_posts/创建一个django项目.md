@@ -27,7 +27,6 @@ django-admin startproject project
 ```
 django-admin startapp project 
 ```
-<!-- more -->
 
 4.在生成的project同级创建templates,用来放置HTML模板,配置
 ```

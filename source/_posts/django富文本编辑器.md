@@ -18,8 +18,6 @@ tags: python
 
     pip install DjangoUeditor
 
-<!-- more -->
-
 ### 2.在 settings.py的INSTALL_APPS里面增加DjangoUeditor app
 
     INSTALLED_APPS = [
@@ -73,6 +71,6 @@ tags: python
 
 ## 示例
 
-![img](/images/20190410113238.jpg)
+![](https://pxw-my.oss-cn-hangzhou.aliyuncs.com/blog/20190821140939.jpg)
 
 ## blog: http://blog.beastxw.wang

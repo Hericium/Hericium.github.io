@@ -13,8 +13,6 @@ tags: node
   $ npm install gitbook -g
 ```
 
-<!-- more -->
-
 1.2 初始化项目
 ```
   $ mkdir gitbook 新建目录
@@ -86,7 +84,8 @@ server {
 
 ## 4 图片
 gitbook
-![clipboard.png](https://image-static.segmentfault.com/255/149/2551497558-5c6aaaacb1083_articlex)
+
+![](https://pxw-my.oss-cn-hangzhou.aliyuncs.com/blog/20190821141908.png)
 
 登录认证
-![clipboard.png](https://image-static.segmentfault.com/366/811/3668114537-5c6aaa83c8ec4_articlex)
+![](https://pxw-my.oss-cn-hangzhou.aliyuncs.com/blog/20190821141816.png)
