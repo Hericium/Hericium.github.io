@@ -1,7 +1,6 @@
 ---
-title: 简历
-date: 2019-06-16 19:28:24
-tags:
+title: about
+date: 2019-08-21 09:36:12
 ---
 
 ## 个人介绍
@@ -60,5 +59,3 @@ tags:
 * IOS Android: 收款宝(正在开发,预计7月初开发完毕，可演示)
 
 ### 公众号: 庞老师的辅导班 (用node egg做后台 帮朋友写的微信公众号)
-
-## 博客: http://blog.beastxw.wang/
