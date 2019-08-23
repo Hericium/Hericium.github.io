@@ -1,5 +1,5 @@
 ---
-title: 《Java主流技术栈SSM+SpringBoot商铺系统》之（一）搭建springmvc环境
+title: 系列教程javao2o商城之（一）搭建springmvc环境
 date: 2019-08-22 11:21:17
 tags: Java主流技术栈SSM+SpringBoot商铺系统
 ---

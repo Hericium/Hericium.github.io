@@ -1,7 +1,7 @@
 ---
 title: 系列教程javao2o商城之（二）项目配置
 date: 2019-08-23 14:03:17
-tags:
+tags: Java主流技术栈SSM+SpringBoot商铺系统
 ---
 
 > 本系列为自己学习《Java主流技术栈SSM+SpringBoot商铺系统》这个课程的一个记录和分享。
@@ -215,7 +215,7 @@ jdbc.password=pp123456
         <!--配置mybatis全局配置文件-->
         <property name="configLocation" value="classpath:mybatis-config.xml"/>
         <!--扫描entity包 使用别名 可以简化书写 多个包时用;隔开-->
-        <property name="typeAliasesPackage" value="com.imooc.o2o.entity"/>
+        <property name="typeAliasesPackage" value="wang.beastxw.javao2o.entity"/>
         <!--扫描sql配置文件:mapper需要的xml文件-->
         <property name="mapperLocations" value="classpath:mapper/*.xml"/>
     </bean>
@@ -224,7 +224,7 @@ jdbc.password=pp123456
         <!--注入sqlSessionFactory-->
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
         <!--给出需要扫描dao接口包-->
-        <property name="basePackage" value="com.imooc.o2o.dao"/>
+        <property name="basePackage" value="wang.beastxw.javao2o.dao"/>
     </bean>
 </beans>
 ```
@@ -245,7 +245,7 @@ jdbc.password=pp123456
     http://www.springframework.org/schema/tx
     http://www.springframework.org/schema/tx/spring-tx.xsd">
     <!-- 扫描service包下所有使用注解的类型 -->
-    <context:component-scan base-package="com.imooc.o2o.service" />
+    <context:component-scan base-package="wang.beastxw.javao2o.service" />
 
     <!-- 配置事务管理器 -->
     <bean id="transactionManager"
@@ -290,7 +290,7 @@ jdbc.password=pp123456
     </bean>
   
     <!-- 4.扫描web相关的bean -->
-    <context:component-scan base-package="com.imooc.o2o.web" />
+    <context:component-scan base-package="wang.beastxw.javao2o.web" />
 </beans>
 ```
 #### 6.修改web.xml
