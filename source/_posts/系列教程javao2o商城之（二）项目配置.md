@@ -178,10 +178,13 @@ jdbc.password=pp123456
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
                       http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1" metadata-complete="true">
-    <display-name>Archetype Created Web Application</display-name>
+  <display-name>Archetype Created Web Application</display-name>
+    <!--默认访问的文件-->
     <welcome-file-list>
         <welcome-file>index.jsp</welcome-file>
     </welcome-file-list>
+    <!--把之前spring文件连接起来-->
+    <!--一个servlet对应一个mapper-->
     <servlet>
         <servlet-name>spring-dispatcher</servlet-name>
         <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
@@ -192,10 +195,11 @@ jdbc.password=pp123456
     </servlet>
     <servlet-mapping>
         <servlet-name>spring-dispatcher</servlet-name>
-        <!-- 默认匹配所有的请求 -->
+        <!--默认匹配所有路由-->
         <url-pattern>/</url-pattern>
     </servlet-mapping>
 </web-app>
+
 ```
 
 ## 4.源码
