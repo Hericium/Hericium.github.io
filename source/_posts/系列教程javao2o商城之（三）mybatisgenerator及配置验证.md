@@ -85,7 +85,7 @@ tags: Java主流技术栈SSM+SpringBoot商铺系统
     </context>
 </generatorConfiguration>
 ```
-`其中classPathEntry的值是数据库驱动的地址对应maven里面的jar包，不过这里因为mysql驱动的问题(否则会一直提示找不到主键)，要降版本，上一节mysql-connector-java的版本是8.多的，降成现在这个。并且把jdbc.properties换成jdbc.driver=com.mysql.jdbc.Driver`
+`其中classPathEntry的值是数据库驱动的地址对应maven里面的jar包，不过这里因为mysql驱动的问题(否则会一直提示找不到主键)，要降版本，上一节mysql-connector-java的版本是8.多的，把它在maven中降成现在这个。并且把jdbc.properties 这个文件换jdbc.driver的值换成jdbc.driver=com.mysql.jdbc.Driver`
 ### 3.使用
 #### 1.添加maven配置
 ![](https://pxw-my.oss-cn-hangzhou.aliyuncs.com/blog/20190827152049.png)
