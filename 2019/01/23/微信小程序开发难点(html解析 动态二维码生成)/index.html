@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="彭兴旺的博客">
+    <meta name="keyword" content="全栈">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        微信小程序开发难点(html解析 动态二维码生成) - 彭兴旺的博客 | Pengxingwang&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/aircloud.css">
+    <link rel="stylesheet" href="/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 兴趣是启蒙，坚持才能有所成 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="/images/avator.JPG" />
+        </div>
+        <div class="name">
+            <i>Pengxingwang</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archive">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#一-前言："><span class="toc-text">一.前言：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二-微信限制"><span class="toc-text">二. 微信限制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三-遇到的难点"><span class="toc-text">三. 遇到的难点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#四-构建意见"><span class="toc-text">四.构建意见</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> 兴趣是启蒙，坚持才能有所成 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        微信小程序开发难点(html解析 动态二维码生成)
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2019-01-23 11:46:42</span></span>
+        
+        <span class="attr">标签：/
+        
+        <a class="tag" href="/tags/#前端" title="前端">前端</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content no-indent">
+        <blockquote>
+<p>之前在segmentfalut社区写得，移到自己的博客来~~</p>
+</blockquote>
+<h3 id="一-前言："><a href="#一-前言：" class="headerlink" title="一.前言："></a>一.前言：</h3><p>最近公司要做一个小程序，之前也没接触过，但是用过Vue框架，就直接上手了，毕竟思想是很像的。<br>但是微信小程序的坑还是有的，今天就讲一下思路，如果有需求可以出详细的文章。有错的地方请大家纠正。</p>
+<h3 id="二-微信限制"><a href="#二-微信限制" class="headerlink" title="二. 微信限制"></a>二. 微信限制</h3><ul>
+<li>说下微信的限制 <ul>
+<li>下面切换的tab不能超过5个</li>
+<li>父页面和子页面的关系不能超过5个</li>
+<li>上线打包后的文件不能超过2M</li>
+<li>不允许跳转第三方链接（这个很重要，导致很多功能实现不了）</li>
+<li>不能给按钮直接下载APP</li>
+<li>内嵌H5只能展示，不能对其进行操作</li>
+<li>小程序里面没有DOM</li>
+<li>小程序不能用本地的图片做背景图</li>
+</ul>
+</li>
+</ul>
+<h3 id="三-遇到的难点"><a href="#三-遇到的难点" class="headerlink" title="三. 遇到的难点"></a>三. 遇到的难点</h3><ul>
+<li>渲染HTML<ul>
+<li>​问题：后台给我返回HTML的代码，让我在小程序里渲染</li>
+<li>难点：小程序不支持DOM</li>
+<li>方案：大神写的 <a href="https://github.com/icindy/wxParse" target="_blank" rel="noopener">wxParse</a>  可以渲染DOM节点</li>
+</ul>
+</li>
+<li>二维码生成<ul>
+<li>问题：要根据后台给的URL动态生成二维码</li>
+<li>难点：小程序不支持DOM</li>
+<li>方案：大神写的 <a href="https://github.com/yingye/weapp-qrcode" target="_blank" rel="noopener">qrcode</a> </li>
+</ul>
+</li>
+<li>微信API问题<ul>
+<li>问题：微信的下载文件的API有问题 <code>wx.downloadFile()</code> PC上可以用，移动端用不了，而且URL还要用一个域名下</li>
+<li>方案：因为我们是要下载图，微信有一个预览图片的API，这个长按可以下载 wx.previewImage（）图片</li>
+</ul>
+</li>
+<li><p>template模板的使用注意点</p>
+<ul>
+<li>使用：<ol>
+<li>App.json文件里不能引入模板文件 如：page/template/teplate</li>
+<li>在父页面的 wxml和wxss文件引入template想对应的wxml和wxss文件<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"> // Wxml文件：</span><br><span class="line"> ​&lt;import src=&quot;../tampmask/tampmask.wxml&quot; /&gt;</span><br><span class="line"> &lt;template is=&quot;tampmask&quot; data=&quot;&#123;&#123;show&#125;&#125;”/&gt;</span><br><span class="line"> // 注意上面结束标签的斜杠！！</span><br><span class="line"></span><br><span class="line"> // 对应的tampmask模板：</span><br><span class="line">  &lt;template name=&quot;tampmask&quot;&gt;&lt;/template&gt; </span><br><span class="line">  </span><br><span class="line"> // WXss文件：</span><br><span class="line">​ @import &apos;../tampmask/tampmask.wxss’;</span><br><span class="line"></span><br><span class="line"> // js文件：</span><br><span class="line"> 模板里的template.js是不会渲染到 template.js要写在引入模板文件上面</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+</ul>
+</li>
+<li><p>​为了避免错误，引号尽量有双引号。</p>
+</li>
+<li>在子页面是可以设置全局的变量的，引入APP（）这个对象</li>
+<li>微信是可以实现下拉刷新的功能的，微信是有下拉的API的，可以通过获取的值来显示隐藏刷新</li>
+</ul>
+<h3 id="四-构建意见"><a href="#四-构建意见" class="headerlink" title="四.构建意见"></a>四.构建意见</h3><ul>
+<li>如果内嵌H5 的页面比较多，不要每个页面都写一个页面，一个模块引入一个<web-view>文件，在根据传进来的值判断显示哪个，否则会很乱</web-view></li>
+<li>样式可以引入weui库，契合微信的样式</li>
+<li>双花括号里面不能用toFixed()等函数，要先在js里转化，再在双花括号里渲染</li>
+<li>关于登录注册，微信可以直接获取手机号码，不用特地弄个登录注册页</li>
+<li>判断是否登录的值可以放在全局的变量里，也可以放在localstroge里面（但是建议放在全局变量里面）。</li>
+<li>关于模板，一个把所有模板写在同一个template文件下面，不用写多个，用不同的name来区分和引用，这样比较清晰，便于管理</li>
+</ul>
+<p>谢谢大家，如果有问题可以一起探讨</p>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        <!-- Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p> -->
+        Created By Pengxingwang 
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

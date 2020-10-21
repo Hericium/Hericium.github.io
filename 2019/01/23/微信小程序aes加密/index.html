@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="彭兴旺的博客">
+    <meta name="keyword" content="全栈">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        微信小程序aes加密 - 彭兴旺的博客 | Pengxingwang&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/aircloud.css">
+    <link rel="stylesheet" href="/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 兴趣是启蒙，坚持才能有所成 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="/images/avator.JPG" />
+        </div>
+        <div class="name">
+            <i>Pengxingwang</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archive">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> 兴趣是启蒙，坚持才能有所成 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        微信小程序aes加密
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2019-01-23 13:55:19</span></span>
+        
+        <span class="attr">标签：/
+        
+        <a class="tag" href="/tags/#前端" title="前端">前端</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content no-indent">
+        <blockquote>
+<p>之前在segmentfalut社区写得，移到自己的博客来~~</p>
+</blockquote>
+<p>一.前言</p>
+<ol>
+<li>什么是AES加密：高级加密标准（英语：Advanced Encryption Standard，缩写：AES），在密码学中又称Rijndael加密法，是美国联邦政府采用的一种区块加密标准。这个标准用来替代原先的DES，已经被多方分析且广为全世界所使用。经过五年的甄选流程，高级加密标准由美国国家标准与技术研究院（NIST）于2001年11月26日发布于FIPS PUB 197，并在2002年5月26日成为有效的标准。2006年，高级加密标准已然成为对称密钥加密中最流行的算法之一。</li>
+<li>AES加密的应用场景，AES加密可逆转加密，前后端公用一个秘钥来加密解密<br>二.难点：<br>小程序引入第三方库<br>前后端加密解密类型相匹配</li>
+</ol>
+<p>三.操作：</p>
+<ol>
+<li>很多人说小程序怎么引入第三方库：</li>
+<li>下载文件<br>1.exports 出来,exports可以把该文件当做模块暴露出来（下次说一下exports、exports defult、model exports的区别）<br>2.在使用到的文件里引用它</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// aes.js文件</span></span><br><span class="line"><span class="string">`/*</span></span><br><span class="line"><span class="string">CryptoJS v3.1.2</span></span><br><span class="line"><span class="string">code.google.com/p/crypto-js</span></span><br><span class="line"><span class="string">(c) 2009-2013 by Jeff Mott. All rights reserved.</span></span><br><span class="line"><span class="string">code.google.com/p/crypto-js/wiki/License</span></span><br><span class="line"><span class="string">/*</span></span><br><span class="line"><span class="string">var CryptoJS=CryptoJS||function(u,p)&#123;var d=&#123;&#125;,l=d.lib=&#123;&#125;,s=function()&#123;&#125;,t=l.Base=&#123;extend:function(a)&#123;s.prototype=this;var c=new s;a&amp;&amp;c.mixIn(a);c.hasOwnProperty("init")||(c.init=function()&#123;c.$super.init.apply(this,arguments)&#125;);c.init.prototype=c;c.$super=this;return c&#125;,create:function()&#123;var a=this.extend();a.init.apply(a,arguments);return a&#125;,init:function()&#123;&#125;,mixIn:function(a)&#123;for(var c in a)a.hasOwnProperty(c)&amp;&amp;(this[c]=a[c]);a.hasOwnProperty("toString")&amp;&amp;(this.toString=a.toString)&#125;,clone:function()&#123;return this.init.prototype.extend(this)&#125;&#125;,</span></span><br><span class="line"><span class="string">r=l.WordArray=t.extend(&#123;init:function(a,c)&#123;a=this.words=a||[];this.sigBytes=c!=p?c:4a.length&#125;,toString:function(a)&#123;return(a||v).stringify(this)&#125;,concat:function(a)&#123;var c=this.words,e=a.words,j=this.sigBytes;a=a.sigBytes;this.clamp();if(j%4)for(var k=0;k&gt;&gt;2]|=(e[k&gt;&gt;&gt;2]&gt;&gt;&gt;24-8*(k%4)&amp;255)&lt;&lt;24-8*((j+k)%4);else if(65535&gt;&gt;2]=e[k&gt;&gt;&gt;2];else c.push.apply(c,e);this.sigBytes+=a;return this&#125;,clamp:function()&#123;var a=this.words,c=this.sigBytes;a[c&gt;&gt;&gt;2]&amp;=4294967295&lt;&lt;</span></span><br><span class="line"><span class="string">32-8*(c%4);a.length=u.ceil(c/4)&#125;,clone:function()&#123;var a=t.clone.call(this);a.words=this.words.slice(0);return a&#125;,random:function(a)&#123;for(var c=[],e=0;e&gt;&gt;2]&gt;&gt;&gt;24-8*(j%4)&amp;255;e.push((k&gt;&gt;&gt;4).toString(16));e.push((k&amp;15).toString(16))&#125;return e.join("")&#125;,parse:function(a)&#123;for(var c=a.length,e=[],j=0;j&gt;&gt;3]|=parseInt(a.substr(j,</span></span><br><span class="line"><span class="string">2),16)&lt;&lt;24-4*(j%8);return new r.init(e,c/2)&#125;&#125;,b=w.Latin1=&#123;stringify:function(a)&#123;var c=a.words;a=a.sigBytes;for(var e=[],j=0;j&gt;&gt;2]&gt;&gt;&gt;24-8*(j%4)&amp;255));return e.join("")&#125;,parse:function(a)&#123;for(var c=a.length,e=[],j=0;j&gt;&gt;2]|=(a.charCodeAt(j)&amp;255)&lt;&lt;24-8*(j%4);return new r.init(e,c)&#125;&#125;,x=w.Utf8=&#123;stringify:function(a)&#123;try&#123;return decodeURIComponent(escape(b.stringify(a)))&#125;catch(c)&#123;throw Error("Malformed UTF-8 data");&#125;&#125;,parse:function(a)&#123;return b.parse(unescape(encodeURIComponent(a)))&#125;&#125;,</span></span><br><span class="line"><span class="string">q=l.BufferedBlockAlgorithm=t.extend(&#123;reset:function()&#123;this._data=new r.init;this._nDataBytes=0&#125;,_append:function(a)&#123;"string"==typeof a&amp;&amp;(a=x.parse(a));this._data.concat(a);this._nDataBytes+=a.sigBytes&#125;,_process:function(a)&#123;var c=this._data,e=c.words,j=c.sigBytes,k=this.blockSize,b=j/(4k),b=a?u.ceil(b):u.max((b|0)-this._minBufferSize,0);a=bk;j=u.min(4a,j);if(a)&#123;for(var q=0;q</span></span><br><span class="line"><span class="string">a._data=this._data.clone();return a&#125;,_minBufferSize:0&#125;);l.Hasher=q.extend(&#123;cfg:t.extend(),init:function(a)&#123;this.cfg=this.cfg.extend(a);this.reset()&#125;,reset:function()&#123;q.reset.call(this);this._doReset()&#125;,update:function(a)&#123;this._append(a);this._process();return this&#125;,finalize:function(a)&#123;a&amp;&amp;this._append(a);return this._doFinalize()&#125;,blockSize:16,_createHelper:function(a)&#123;return function(b,e)&#123;return(new a.init(e)).finalize(b)&#125;&#125;,_createHmacHelper:function(a)&#123;return function(b,e)&#123;return(new n.HMAC.init(a,</span></span><br><span class="line"><span class="string">e)).finalize(b)&#125;&#125;&#125;);var n=d.algo=&#123;&#125;;return d&#125;(Math);</span></span><br><span class="line"><span class="string">(function()&#123;var u=CryptoJS,p=u.lib.WordArray;u.enc.Base64=&#123;stringify:function(d)&#123;var l=d.words,p=d.sigBytes,t=this._map;d.clamp();d=[];for(var r=0;r&gt;&gt;2]&gt;&gt;&gt;24-8(r%4)&amp;255)&lt;&lt;16|(l[r+1&gt;&gt;&gt;2]&gt;&gt;&gt;24-8*((r+1)%4)&amp;255)&lt;&lt;8|l[r+2&gt;&gt;&gt;2]&gt;&gt;&gt;24-8*((r+2)%4)&amp;255,v=0;4&gt;v&amp;&amp;r+0.75v&gt;&gt;6(3-v)&amp;63));if(l=t.charAt(64))for(;d.length%4;)d.push(l);return d.join("")&#125;,parse:function(d)&#123;var l=d.length,s=this._map,t=s.charAt(64);t&amp;&amp;(t=d.indexOf(t),-1!=t&amp;&amp;(l=t));for(var t=[],r=0,w=0;w&lt;</span></span><br><span class="line"><span class="string">l;w++)if(w%4)&#123;var v=s.indexOf(d.charAt(w-1))&lt;&lt;2*(w%4),b=s.indexOf(d.charAt(w))&gt;&gt;&gt;6-2*(w%4);t[r&gt;&gt;&gt;2]|=(v|b)&lt;&lt;24-8*(r%4);r++&#125;return p.create(t,r)&#125;,_map:"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/="&#125;&#125;)();</span></span><br><span class="line"><span class="string">(function(u)&#123;function p(b,n,a,c,e,j,k)&#123;b=b+(n&amp;a|~n&amp;c)+e+k;return(b&lt;&gt;&gt;32-j)+n&#125;function d(b,n,a,c,e,j,k)&#123;b=b+(n&amp;c|a&amp;~c)+e+k;return(b&lt;&gt;&gt;32-j)+n&#125;function l(b,n,a,c,e,j,k)&#123;b=b+(n^a^c)+e+k;return(b&lt;&gt;&gt;32-j)+n&#125;function s(b,n,a,c,e,j,k)&#123;b=b+(a^(n|~c))+e+k;return(b&lt;&gt;&gt;32-j)+n&#125;for(var t=CryptoJS,r=t.lib,w=r.WordArray,v=r.Hasher,r=t.algo,b=[],x=0;64&gt;x;x++)b[x]=4294967296u.abs(u.sin(x+1))|0;r=r.MD5=v.extend(&#123;_doReset:function()&#123;this._hash=new w.init([1732584193,4023233417,2562383102,271733878])&#125;,</span></span><br><span class="line"><span class="string">_doProcessBlock:function(q,n)&#123;for(var a=0;16&gt;a;a++)&#123;var c=n+a,e=q[c];q[c]=(e&lt;&lt;8|e&gt;&gt;&gt;24)&amp;16711935|(e&lt;&lt;24|e&gt;&gt;&gt;8)&amp;4278255360&#125;var a=this._hash.words,c=q[n+0],e=q[n+1],j=q[n+2],k=q[n+3],z=q[n+4],r=q[n+5],t=q[n+6],w=q[n+7],v=q[n+8],A=q[n+9],B=q[n+10],C=q[n+11],u=q[n+12],D=q[n+13],E=q[n+14],x=q[n+15],f=a[0],m=a[1],g=a[2],h=a[3],f=p(f,m,g,h,c,7,b[0]),h=p(h,f,m,g,e,12,b[1]),g=p(g,h,f,m,j,17,b[2]),m=p(m,g,h,f,k,22,b[3]),f=p(f,m,g,h,z,7,b[4]),h=p(h,f,m,g,r,12,b[5]),g=p(g,h,f,m,t,17,b[6]),m=p(m,g,h,f,w,22,b[7]),</span></span><br><span class="line"><span class="string">f=p(f,m,g,h,v,7,b[8]),h=p(h,f,m,g,A,12,b[9]),g=p(g,h,f,m,B,17,b[10]),m=p(m,g,h,f,C,22,b[11]),f=p(f,m,g,h,u,7,b[12]),h=p(h,f,m,g,D,12,b[13]),g=p(g,h,f,m,E,17,b[14]),m=p(m,g,h,f,x,22,b[15]),f=d(f,m,g,h,e,5,b[16]),h=d(h,f,m,g,t,9,b[17]),g=d(g,h,f,m,C,14,b[18]),m=d(m,g,h,f,c,20,b[19]),f=d(f,m,g,h,r,5,b[20]),h=d(h,f,m,g,B,9,b[21]),g=d(g,h,f,m,x,14,b[22]),m=d(m,g,h,f,z,20,b[23]),f=d(f,m,g,h,A,5,b[24]),h=d(h,f,m,g,E,9,b[25]),g=d(g,h,f,m,k,14,b[26]),m=d(m,g,h,f,v,20,b[27]),f=d(f,m,g,h,D,5,b[28]),h=d(h,f,</span></span><br><span class="line"><span class="string">m,g,j,9,b[29]),g=d(g,h,f,m,w,14,b[30]),m=d(m,g,h,f,u,20,b[31]),f=l(f,m,g,h,r,4,b[32]),h=l(h,f,m,g,v,11,b[33]),g=l(g,h,f,m,C,16,b[34]),m=l(m,g,h,f,E,23,b[35]),f=l(f,m,g,h,e,4,b[36]),h=l(h,f,m,g,z,11,b[37]),g=l(g,h,f,m,w,16,b[38]),m=l(m,g,h,f,B,23,b[39]),f=l(f,m,g,h,D,4,b[40]),h=l(h,f,m,g,c,11,b[41]),g=l(g,h,f,m,k,16,b[42]),m=l(m,g,h,f,t,23,b[43]),f=l(f,m,g,h,A,4,b[44]),h=l(h,f,m,g,u,11,b[45]),g=l(g,h,f,m,x,16,b[46]),m=l(m,g,h,f,j,23,b[47]),f=s(f,m,g,h,c,6,b[48]),h=s(h,f,m,g,w,10,b[49]),g=s(g,h,f,m,</span></span><br><span class="line"><span class="string">E,15,b[50]),m=s(m,g,h,f,r,21,b[51]),f=s(f,m,g,h,u,6,b[52]),h=s(h,f,m,g,k,10,b[53]),g=s(g,h,f,m,B,15,b[54]),m=s(m,g,h,f,e,21,b[55]),f=s(f,m,g,h,v,6,b[56]),h=s(h,f,m,g,x,10,b[57]),g=s(g,h,f,m,t,15,b[58]),m=s(m,g,h,f,D,21,b[59]),f=s(f,m,g,h,z,6,b[60]),h=s(h,f,m,g,C,10,b[61]),g=s(g,h,f,m,j,15,b[62]),m=s(m,g,h,f,A,21,b[63]);a[0]=a[0]+f|0;a[1]=a[1]+m|0;a[2]=a[2]+g|0;a[3]=a[3]+h|0&#125;,_doFinalize:function()&#123;var b=this._data,n=b.words,a=8this._nDataBytes,c=8b.sigBytes;n[c&gt;&gt;&gt;5]|=128&lt;&lt;24-c%32;var e=u.floor(a/</span></span><br><span class="line"><span class="string">4294967296);n[(c+64&gt;&gt;&gt;9&lt;&lt;4)+15]=(e&lt;&lt;8|e&gt;&gt;&gt;24)&amp;16711935|(e&lt;&lt;24|e&gt;&gt;&gt;8)&amp;4278255360;n[(c+64&gt;&gt;&gt;9&lt;&lt;4)+14]=(a&lt;&lt;8|a&gt;&gt;&gt;24)&amp;16711935|(a&lt;&lt;24|a&gt;&gt;&gt;8)&amp;4278255360;b.sigBytes=4(n.length+1);this._process();b=this._hash;n=b.words;for(a=0;4&gt;a;a++)c=n[a],n[a]=(c&lt;&lt;8|c&gt;&gt;&gt;24)&amp;16711935|(c&lt;&lt;24|c&gt;&gt;&gt;8)&amp;4278255360;return b&#125;,clone:function()&#123;var b=v.clone.call(this);b._hash=this._hash.clone();return b&#125;&#125;);t.MD5=v._createHelper(r);t.HmacMD5=v._createHmacHelper(r)&#125;)(Math);</span></span><br><span class="line"><span class="string">(function()&#123;var u=CryptoJS,p=u.lib,d=p.Base,l=p.WordArray,p=u.algo,s=p.EvpKDF=d.extend(&#123;cfg:d.extend(&#123;keySize:4,hasher:p.MD5,iterations:1&#125;),init:function(d)&#123;this.cfg=this.cfg.extend(d)&#125;,compute:function(d,r)&#123;for(var p=this.cfg,s=p.hasher.create(),b=l.create(),u=b.words,q=p.keySize,p=p.iterations;u.length</span></span><br><span class="line"><span class="string">l)&#125;&#125;)();</span></span><br><span class="line"><span class="string">CryptoJS.lib.Cipher||function(u)&#123;var p=CryptoJS,d=p.lib,l=d.Base,s=d.WordArray,t=d.BufferedBlockAlgorithm,r=p.enc.Base64,w=p.algo.EvpKDF,v=d.Cipher=t.extend(&#123;cfg:l.extend(),createEncryptor:function(e,a)&#123;return this.create(this._ENC_XFORM_MODE,e,a)&#125;,createDecryptor:function(e,a)&#123;return this.create(this._DEC_XFORM_MODE,e,a)&#125;,init:function(e,a,b)&#123;this.cfg=this.cfg.extend(b);this._xformMode=e;this._key=a;this.reset()&#125;,reset:function()&#123;t.reset.call(this);this._doReset()&#125;,process:function(e)&#123;this._append(e);return this._process()&#125;,</span></span><br><span class="line"><span class="string">finalize:function(e)&#123;e&amp;&amp;this._append(e);return this._doFinalize()&#125;,keySize:4,ivSize:4,_ENC_XFORM_MODE:1,_DEC_XFORM_MODE:2,_createHelper:function(e)&#123;return&#123;encrypt:function(b,k,d)&#123;return("string"==typeof k?c:a).encrypt(e,b,k,d)&#125;,decrypt:function(b,k,d)&#123;return("string"==typeof k?c:a).decrypt(e,b,k,d)&#125;&#125;&#125;&#125;);d.StreamCipher=v.extend(&#123;_doFinalize:function()&#123;return this._process(!0)&#125;,blockSize:1&#125;);var b=p.mode=&#123;&#125;,x=function(e,a,b)&#123;var c=this._iv;c?this._iv=u:c=this._prevBlock;for(var d=0;d</span></span><br><span class="line"><span class="string">c[d]&#125;,q=(d.BlockCipherMode=l.extend(&#123;createEncryptor:function(e,a)&#123;return this.Encryptor.create(e,a)&#125;,createDecryptor:function(e,a)&#123;return this.Decryptor.create(e,a)&#125;,init:function(e,a)&#123;this._cipher=e;this._iv=a&#125;&#125;)).extend();q.Encryptor=q.extend(&#123;processBlock:function(e,a)&#123;var b=this._cipher,c=b.blockSize;x.call(this,e,a,c);b.encryptBlock(e,a);this._prevBlock=e.slice(a,a+c)&#125;&#125;);q.Decryptor=q.extend(&#123;processBlock:function(e,a)&#123;var b=this._cipher,c=b.blockSize,d=e.slice(a,a+c);b.decryptBlock(e,a);x.call(this,</span></span><br><span class="line"><span class="string">e,a,c);this._prevBlock=d&#125;&#125;);b=b.CBC=q;q=(p.pad=&#123;&#125;).Pkcs7=&#123;pad:function(a,b)&#123;for(var c=4b,c=c-a.sigBytes%c,d=c&lt;&lt;24|c&lt;&lt;16|c&lt;&lt;8|c,l=[],n=0;n&gt;&gt;2]&amp;255&#125;&#125;;d.BlockCipher=v.extend(&#123;cfg:v.cfg.extend(&#123;mode:b,padding:q&#125;),reset:function()&#123;v.reset.call(this);var a=this.cfg,b=a.iv,a=a.mode;if(this._xformMode==this._ENC_XFORM_MODE)var c=a.createEncryptor;else c=a.createDecryptor,this._minBufferSize=1;this._mode=c.call(a,</span></span><br><span class="line"><span class="string">this,b&amp;&amp;b.words)&#125;,_doProcessBlock:function(a,b)&#123;this._mode.processBlock(a,b)&#125;,_doFinalize:function()&#123;var a=this.cfg.padding;if(this._xformMode==this._ENC_XFORM_MODE)&#123;a.pad(this._data,this.blockSize);var b=this._process(!0)&#125;else b=this._process(!0),a.unpad(b);return b&#125;,blockSize:4&#125;);var n=d.CipherParams=l.extend(&#123;init:function(a)&#123;this.mixIn(a)&#125;,toString:function(a)&#123;return(a||this.formatter).stringify(this)&#125;&#125;),b=(p.format=&#123;&#125;).OpenSSL=&#123;stringify:function(a)&#123;var b=a.ciphertext;a=a.salt;return(a?s.create([1398893684,</span></span><br><span class="line"><span class="string">1701076831]).concat(a).concat(b):b).toString(r)&#125;,parse:function(a)&#123;a=r.parse(a);var b=a.words;if(1398893684==b[0]&amp;&amp;1701076831==b[1])&#123;var c=s.create(b.slice(2,4));b.splice(0,4);a.sigBytes-=16&#125;return n.create(&#123;ciphertext:a,salt:c&#125;)&#125;&#125;,a=d.SerializableCipher=l.extend(&#123;cfg:l.extend(&#123;format:b&#125;),encrypt:function(a,b,c,d)&#123;d=this.cfg.extend(d);var l=a.createEncryptor(c,d);b=l.finalize(b);l=l.cfg;return n.create(&#123;ciphertext:b,key:c,iv:l.iv,algorithm:a,mode:l.mode,padding:l.padding,blockSize:a.blockSize,formatter:d.format&#125;)&#125;,</span></span><br><span class="line"><span class="string">decrypt:function(a,b,c,d)&#123;d=this.cfg.extend(d);b=this._parse(b,d.format);return a.createDecryptor(c,d).finalize(b.ciphertext)&#125;,_parse:function(a,b)&#123;return"string"==typeof a?b.parse(a,this):a&#125;&#125;),p=(p.kdf=&#123;&#125;).OpenSSL=&#123;execute:function(a,b,c,d)&#123;d||(d=s.random(8));a=w.create(&#123;keySize:b+c&#125;).compute(a,d);c=s.create(a.words.slice(b),4c);a.sigBytes=4b;return n.create(&#123;key:a,iv:c,salt:d&#125;)&#125;&#125;,c=d.PasswordBasedCipher=a.extend(&#123;cfg:a.cfg.extend(&#123;kdf:p&#125;),encrypt:function(b,c,d,l)&#123;l=this.cfg.extend(l);d=l.kdf.execute(d,</span></span><br><span class="line"><span class="string">b.keySize,b.ivSize);l.iv=d.iv;b=a.encrypt.call(this,b,c,d.key,l);b.mixIn(d);return b&#125;,decrypt:function(b,c,d,l)&#123;l=this.cfg.extend(l);c=this._parse(c,l.format);d=l.kdf.execute(d,b.keySize,b.ivSize,c.salt);l.iv=d.iv;return a.decrypt.call(this,b,c,d.key,l)&#125;&#125;)&#125;();</span></span><br><span class="line"><span class="string">(function()&#123;for(var u=CryptoJS,p=u.lib.BlockCipher,d=u.algo,l=[],s=[],t=[],r=[],w=[],v=[],b=[],x=[],q=[],n=[],a=[],c=0;256&gt;c;c++)a[c]=128&gt;c?c&lt;&lt;1:c&lt;&lt;1^283;for(var e=0,j=0,c=0;256&gt;c;c++)&#123;var k=j^j&lt;&lt;1^j&lt;&lt;2^j&lt;&lt;3^j&lt;&lt;4,k=k&gt;&gt;&gt;8^k&amp;255^99;l[e]=k;s[k]=e;var z=a[e],F=a[z],G=a[F],y=257a[k]^16843008k;t[e]=y&lt;&lt;24|y&gt;&gt;&gt;8;r[e]=y&lt;&lt;16|y&gt;&gt;&gt;16;w[e]=y&lt;&lt;8|y&gt;&gt;&gt;24;v[e]=y;y=16843009G^65537F^257z^16843008e;b[k]=y&lt;&lt;24|y&gt;&gt;&gt;8;x[k]=y&lt;&lt;16|y&gt;&gt;&gt;16;q[k]=y&lt;&lt;8|y&gt;&gt;&gt;24;n[k]=y;e?(e=z^a[a[a[G^z]]],j^=a[a[j]]):e=j=1&#125;var H=[0,1,2,4,8,</span></span><br><span class="line"><span class="string">16,32,64,128,27,54],d=d.AES=p.extend(&#123;_doReset:function()&#123;for(var a=this._key,c=a.words,d=a.sigBytes/4,a=4((this._nRounds=d+6)+1),e=this._keySchedule=[],j=0;j&gt;&gt;24]&lt;&lt;24|l[k&gt;&gt;&gt;16&amp;255]&lt;&lt;16|l[k&gt;&gt;&gt;8&amp;255]&lt;&lt;8|l[k&amp;255]):(k=k&lt;&lt;8|k&gt;&gt;&gt;24,k=l[k&gt;&gt;&gt;24]&lt;&lt;24|l[k&gt;&gt;&gt;16&amp;255]&lt;&lt;16|l[k&gt;&gt;&gt;8&amp;255]&lt;&lt;8|l[k&amp;255],k^=H[j/d|0]&lt;&lt;24);e[j]=e[j-d]^k&#125;c=this._invKeySchedule=[];for(d=0;dd||4&gt;=j?k:b[l[k&gt;&gt;&gt;24]]^x[l[k&gt;&gt;&gt;16&amp;255]]^q[l[k&gt;&gt;&gt;</span></span><br><span class="line"><span class="string">8&amp;255]]^n[l[k&amp;255]]&#125;,encryptBlock:function(a,b)&#123;this._doCryptBlock(a,b,this._keySchedule,t,r,w,v,l)&#125;,decryptBlock:function(a,c)&#123;var d=a[c+1];a[c+1]=a[c+3];a[c+3]=d;this._doCryptBlock(a,c,this._invKeySchedule,b,x,q,n,s);d=a[c+1];a[c+1]=a[c+3];a[c+3]=d&#125;,_doCryptBlock:function(a,b,c,d,e,j,l,f)&#123;for(var m=this._nRounds,g=a[b]^c[0],h=a[b+1]^c[1],k=a[b+2]^c[2],n=a[b+3]^c[3],p=4,r=1;r&gt;&gt;24]^e[h&gt;&gt;&gt;16&amp;255]^j[k&gt;&gt;&gt;8&amp;255]^l[n&amp;255]^c[p++],s=d[h&gt;&gt;&gt;24]^e[k&gt;&gt;&gt;16&amp;255]^j[n&gt;&gt;&gt;8&amp;255]^l[g&amp;255]^c[p++],t=</span></span><br><span class="line"><span class="string">d[k&gt;&gt;&gt;24]^e[n&gt;&gt;&gt;16&amp;255]^j[g&gt;&gt;&gt;8&amp;255]^l[h&amp;255]^c[p++],n=d[n&gt;&gt;&gt;24]^e[g&gt;&gt;&gt;16&amp;255]^j[h&gt;&gt;&gt;8&amp;255]^l[k&amp;255]^c[p++],g=q,h=s,k=t;q=(f[g&gt;&gt;&gt;24]&lt;&lt;24|f[h&gt;&gt;&gt;16&amp;255]&lt;&lt;16|f[k&gt;&gt;&gt;8&amp;255]&lt;&lt;8|f[n&amp;255])^c[p++];s=(f[h&gt;&gt;&gt;24]&lt;&lt;24|f[k&gt;&gt;&gt;16&amp;255]&lt;&lt;16|f[n&gt;&gt;&gt;8&amp;255]&lt;&lt;8|f[g&amp;255])^c[p++];t=(f[k&gt;&gt;&gt;24]&lt;&lt;24|f[n&gt;&gt;&gt;16&amp;255]&lt;&lt;16|f[g&gt;&gt;&gt;8&amp;255]&lt;&lt;8|f[h&amp;255])^c[p++];n=(f[n&gt;&gt;&gt;24]&lt;&lt;24|f[g&gt;&gt;&gt;16&amp;255]&lt;&lt;16|f[h&gt;&gt;&gt;8&amp;255]&lt;&lt;8|f[k&amp;255])^c[p++];a[b]=q;a[b+1]=s;a[b+2]=t;a[b+3]=n&#125;,keySize:8&#125;);u.AES=p._createHelper(d)&#125;)();</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">module.exports = &#123;</span></span><br><span class="line"><span class="string">CryptoJS: CryptoJS</span></span><br><span class="line"><span class="string">&#125;`</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// main.js</span></span><br><span class="line"><span class="comment">//引入aes</span></span><br><span class="line">  <span class="keyword">var</span> fun_aes = <span class="built_in">require</span>(<span class="string">'../../utils/aes.js'</span>);  <span class="comment">//引用AES源码js</span></span><br><span class="line"><span class="comment">//加密加密解密</span></span><br><span class="line">   <span class="comment">//十六位十六进制数作为秘钥</span></span><br><span class="line"><span class="keyword">var</span> key = fun_aes.CryptoJS.enc.Utf8.parse(<span class="string">"3454345434543454"</span>);  </span><br><span class="line"><span class="comment">//十六位十六进制数作为秘钥偏移量</span></span><br><span class="line"><span class="keyword">var</span> iv  = fun_aes.CryptoJS.enc.Utf8.parse(<span class="string">'6666666666666666'</span>); </span><br><span class="line"><span class="comment">//秘钥和偏移量后台会给前端</span></span><br><span class="line"><span class="comment">//封装加密</span></span><br><span class="line">Encrypt: <span class="function"><span class="keyword">function</span> (<span class="params">word</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> srcs = fun_aes.CryptoJS.enc.Utf8.parse(word);</span><br><span class="line">    <span class="keyword">var</span> encrypted = fun_aes.CryptoJS.AES.encrypt(srcs, key, &#123; <span class="attr">iv</span>: iv, <span class="attr">mode</span>: fun_aes.CryptoJS.mode.CBC, <span class="attr">padding</span>: fun_aes.CryptoJS.pad.Pkcs7 &#125;);</span><br><span class="line">    <span class="keyword">return</span> encrypted.ciphertext.toString().toUpperCase();</span><br><span class="line">&#125;,</span><br><span class="line"><span class="comment">//封装解密</span></span><br><span class="line">Decrypt: <span class="function"><span class="keyword">function</span> (<span class="params">word</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> encryptedHexStr = fun_aes.CryptoJS.enc.Hex.parse(word);</span><br><span class="line">    <span class="keyword">var</span> srcs = fun_aes.CryptoJS.enc.Base64.stringify(encryptedHexStr);</span><br><span class="line">    <span class="keyword">var</span> decrypt = fun_aes.CryptoJS.AES.decrypt(srcs, key, &#123; <span class="attr">iv</span>: iv, <span class="attr">mode</span>: fun_aes.CryptoJS.mode.CBC, <span class="attr">padding</span>: fun_aes.CryptoJS.pad.Pkcs7 &#125;);</span><br><span class="line">    <span class="keyword">var</span> decryptedStr = decrypt.toString(fun_aes.CryptoJS.enc.Utf8);</span><br><span class="line">    <span class="keyword">return</span> decryptedStr.toString();</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//使用</span></span><br><span class="line"><span class="comment">//把加密好的给后台就好了，解密前端可以自己校验自己解密好的是不是和原始数据一样；</span></span><br></pre></td></tr></table></figure>
+<p>四 . demo （有aes、base64、md5、sha1的加密）</p>
+<p> Github地址： <a href="https://github.com/Hericium/encrypt" target="_blank" rel="noopener">https://github.com/Hericium/encrypt</a></p>
+<p>五.最后分享一个工具，真的很有用</p>
+<p> <a href="http://www.seacha.com/tools/aes.html#" target="_blank" rel="noopener">http://www.seacha.com/tools/aes.html#</a></p>
+<p>六.友情提示：</p>
+<p> 特别留意加密结果编码方式，有base64和16进制两种，前后台要统一。</p>
+<p>七.加密库（crypto.js） <a href="https://github.com/brix/crypto-js" target="_blank" rel="noopener">https://github.com/brix/crypto-js</a></p>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        <!-- Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p> -->
+        Created By Pengxingwang 
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

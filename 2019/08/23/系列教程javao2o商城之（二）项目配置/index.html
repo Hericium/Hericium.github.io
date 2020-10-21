@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="彭兴旺的博客">
+    <meta name="keyword" content="全栈">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        系列教程javao2o商城之（二）项目配置 - 彭兴旺的博客 | Pengxingwang&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/aircloud.css">
+    <link rel="stylesheet" href="/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 兴趣是启蒙，坚持才能有所成 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="/images/avator.JPG" />
+        </div>
+        <div class="name">
+            <i>Pengxingwang</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archive">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-为什么学习java"><span class="toc-text">1.为什么学习java</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-计划-同一个项目不同的语言去完成"><span class="toc-text">2.计划(同一个项目不同的语言去完成)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-项目配置"><span class="toc-text">3.项目配置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-补全文件夹"><span class="toc-text">1.补全文件夹</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-剩余各项配置"><span class="toc-text">2.剩余各项配置</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-创建jdbc-properties"><span class="toc-text">1.创建jdbc.properties</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-创建mybatis-config-xml"><span class="toc-text">2.创建mybatis-config.xml</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-创建spring-dao-xml"><span class="toc-text">3.创建spring-dao.xml</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-创建spring-service-xml"><span class="toc-text">4.创建spring-service.xml</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-创建spring-web-xml"><span class="toc-text">5.创建spring-web.xml</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-修改web-xml"><span class="toc-text">6.修改web.xml</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-源码"><span class="toc-text">4.源码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-添加群聊一起学习-698615299-！"><span class="toc-text">5.添加群聊一起学习(698615299)！</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> 兴趣是启蒙，坚持才能有所成 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        系列教程javao2o商城之（二）项目配置
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2019-08-23 14:03:17</span></span>
+        
+        <span class="attr">标签：/
+        
+        <a class="tag" href="/tags/#Java主流技术栈SSM+SpringBoot商铺系统" title="Java主流技术栈SSM+SpringBoot商铺系统">Java主流技术栈SSM+SpringBoot商铺系统</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content no-indent">
+        <blockquote>
+<p>本系列为自己学习《Java主流技术栈SSM+SpringBoot商铺系统》这个课程的一个记录和分享。</p>
+</blockquote>
+<h2 id="1-为什么学习java"><a href="#1-为什么学习java" class="headerlink" title="1.为什么学习java"></a>1.为什么学习java</h2><p>  现在是前端，一直想成为全栈，学过node和python之类的后台语言，也写过一些小项目 egg Django之类的框架也都可以使用，但是发现不能系统的入门，也加上感觉自己写的代码不是特别好，不能很好的使用面向对象语言的特性，所以就来学习java。同时对下一步上typescript有帮助。</p>
+<h2 id="2-计划-同一个项目不同的语言去完成"><a href="#2-计划-同一个项目不同的语言去完成" class="headerlink" title="2.计划(同一个项目不同的语言去完成)"></a>2.计划(同一个项目不同的语言去完成)</h2><p>  1.打算做三版不同语言的后台:java、 node、 python<br>  2.如果有需要做4款不同框架的前台:vue、react、react-native、angular</p>
+<h2 id="3-项目配置"><a href="#3-项目配置" class="headerlink" title="3.项目配置"></a>3.项目配置</h2><h3 id="1-补全文件夹"><a href="#1-补全文件夹" class="headerlink" title="1.补全文件夹"></a>1.补全文件夹</h3><p><img src="https://pxw-my.oss-cn-hangzhou.aliyuncs.com/blog/20190823143050.png" alt=""></p>
+<h3 id="2-剩余各项配置"><a href="#2-剩余各项配置" class="headerlink" title="2.剩余各项配置"></a>2.剩余各项配置</h3><h4 id="1-创建jdbc-properties"><a href="#1-创建jdbc-properties" class="headerlink" title="1.创建jdbc.properties"></a>1.创建jdbc.properties</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">//目录 src/main/resources/jdbc.properties</span><br><span class="line"></span><br><span class="line">jdbc.driver=com.mysql.cj.jdbc.Driver</span><br><span class="line">jdbc.url=jdbc:mysql://localhost:3306/javao2o?userUnicode=true&amp;characterEncoding=utf8</span><br><span class="line">jdbc.username=root</span><br><span class="line">jdbc.password=pp123456</span><br></pre></td></tr></table></figure>
+<h4 id="2-创建mybatis-config-xml"><a href="#2-创建mybatis-config-xml" class="headerlink" title="2.创建mybatis-config.xml"></a>2.创建mybatis-config.xml</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">// src/main/resources/mybatis-config.xml</span><br><span class="line"></span><br><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span><br><span class="line">&lt;!DOCTYPE configuration</span><br><span class="line">        PUBLIC &quot;-//mybatis.org//DTD Config 3.0//EN&quot;</span><br><span class="line">        &quot;http://mybatis.org/dtd/mybatis-3-config.dtd&quot;&gt;</span><br><span class="line">&lt;configuration&gt;</span><br><span class="line">    &lt;!-- 配置全局属性 --&gt;</span><br><span class="line">    &lt;settings&gt;</span><br><span class="line">        &lt;!-- 使用jdbc的getGeneratedKeys获取数据库自增主键值 --&gt;</span><br><span class="line">        &lt;setting name=&quot;useGeneratedKeys&quot; value=&quot;true&quot; /&gt;</span><br><span class="line"></span><br><span class="line">        &lt;!-- 使用列标签替换列别名 默认:true --&gt;</span><br><span class="line">        &lt;setting name=&quot;useColumnLabel&quot; value=&quot;true&quot; /&gt;</span><br><span class="line"></span><br><span class="line">        &lt;!-- 开启驼峰命名转换:Table&#123;create_time&#125; -&gt; Entity&#123;createTime&#125; --&gt;</span><br><span class="line">        &lt;setting name=&quot;mapUnderscoreToCamelCase&quot; value=&quot;true&quot; /&gt;</span><br><span class="line">    &lt;/settings&gt;</span><br><span class="line">&lt;/configuration&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="3-创建spring-dao-xml"><a href="#3-创建spring-dao-xml" class="headerlink" title="3.创建spring-dao.xml"></a>3.创建spring-dao.xml</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line">//src/main/resources/spring/spring-dao.xml</span><br><span class="line"></span><br><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span><br><span class="line">&lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;</span><br><span class="line">       xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span><br><span class="line">       xmlns:context=&quot;http://www.springframework.org/schema/context&quot;</span><br><span class="line">       xsi:schemaLocation=&quot;http://www.springframework.org/schema/beans</span><br><span class="line">        http://www.springframework.org/schema/beans/spring-beans.xsd</span><br><span class="line">        http://www.springframework.org/schema/context</span><br><span class="line">        http://www.springframework.org/schema/context/spring-context.xsd&quot;&gt;</span><br><span class="line">    &lt;!--配置整合mybatis过程--&gt;</span><br><span class="line">    &lt;!--1:配置数据库相关参数--&gt;</span><br><span class="line">    &lt;context:property-placeholder location=&quot;classpath:jdbc.properties&quot;/&gt;</span><br><span class="line">    &lt;!--2.数据库连接池--&gt;</span><br><span class="line">    &lt;bean id=&quot;dataSource&quot; class=&quot;com.mchange.v2.c3p0.ComboPooledDataSource&quot;&gt;</span><br><span class="line"></span><br><span class="line">        &lt;!--配置连接池属性--&gt;</span><br><span class="line">        &lt;property name=&quot;driverClass&quot; value=&quot;$&#123;jdbc.driver&#125;&quot;/&gt;</span><br><span class="line">        &lt;property name=&quot;jdbcUrl&quot; value=&quot;$&#123;jdbc.url&#125;&quot;/&gt;</span><br><span class="line">        &lt;property name=&quot;user&quot; value=&quot;$&#123;jdbc.username&#125;&quot;/&gt;</span><br><span class="line">        &lt;property name=&quot;password&quot; value=&quot;$&#123;jdbc.password&#125;&quot;/&gt;</span><br><span class="line"></span><br><span class="line">        &lt;!--c3p0连接池的私有属性--&gt;</span><br><span class="line">        &lt;property name=&quot;maxPoolSize&quot; value=&quot;30&quot;/&gt;</span><br><span class="line">        &lt;property name=&quot;minPoolSize&quot; value=&quot;10&quot;/&gt;</span><br><span class="line">        &lt;!--关闭连接不自动commit--&gt;</span><br><span class="line">        &lt;property name=&quot;autoCommitOnClose&quot; value=&quot;false&quot;/&gt;</span><br><span class="line">        &lt;!--获取连接超时时间--&gt;</span><br><span class="line">        &lt;property name=&quot;checkoutTimeout&quot; value=&quot;3000&quot;/&gt;</span><br><span class="line">        &lt;!--当获取链接失败重试次数--&gt;</span><br><span class="line">        &lt;property name=&quot;acquireRetryAttempts&quot; value=&quot;2&quot;/&gt;</span><br><span class="line">    &lt;/bean&gt;</span><br><span class="line">    &lt;!--3.配置SqlSessionFactory对象--&gt;</span><br><span class="line">    &lt;bean id=&quot;sqlSessionFactory&quot; class=&quot;org.mybatis.spring.SqlSessionFactoryBean&quot;&gt;</span><br><span class="line">        &lt;!--注入数据库连接池--&gt;</span><br><span class="line">        &lt;property name=&quot;dataSource&quot; ref=&quot;dataSource&quot;/&gt;</span><br><span class="line">        &lt;!--配置mybatis全局配置文件--&gt;</span><br><span class="line">        &lt;property name=&quot;configLocation&quot; value=&quot;classpath:mybatis-config.xml&quot;/&gt;</span><br><span class="line">        &lt;!--扫描entity包 使用别名 可以简化书写 多个包时用;隔开--&gt;</span><br><span class="line">        &lt;property name=&quot;typeAliasesPackage&quot; value=&quot;wang.beastxw.javao2o.entity&quot;/&gt;</span><br><span class="line">        &lt;!--扫描sql配置文件:mapper需要的xml文件--&gt;</span><br><span class="line">        &lt;property name=&quot;mapperLocations&quot; value=&quot;classpath:mapper/*.xml&quot;/&gt;</span><br><span class="line">    &lt;/bean&gt;</span><br><span class="line">    &lt;!--4.配置扫描Dao接口包，动态实现dao接口，注入到spring容器中--&gt;</span><br><span class="line">    &lt;bean class=&quot;org.mybatis.spring.mapper.MapperScannerConfigurer&quot;&gt;</span><br><span class="line">        &lt;!--注入sqlSessionFactory--&gt;</span><br><span class="line">        &lt;property name=&quot;sqlSessionFactoryBeanName&quot; value=&quot;sqlSessionFactory&quot;/&gt;</span><br><span class="line">        &lt;!--给出需要扫描dao接口包--&gt;</span><br><span class="line">        &lt;property name=&quot;basePackage&quot; value=&quot;wang.beastxw.javao2o.dao&quot;/&gt;</span><br><span class="line">    &lt;/bean&gt;</span><br><span class="line">&lt;/beans&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="4-创建spring-service-xml"><a href="#4-创建spring-service-xml" class="headerlink" title="4.创建spring-service.xml"></a>4.创建spring-service.xml</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">// src/main/resources/spring/spring-service.xml</span><br><span class="line"></span><br><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span><br><span class="line">&lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;</span><br><span class="line">       xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span><br><span class="line">       xmlns:context=&quot;http://www.springframework.org/schema/context&quot;</span><br><span class="line">       xmlns:tx=&quot;http://www.springframework.org/schema/tx&quot;</span><br><span class="line">       xsi:schemaLocation=&quot;http://www.springframework.org/schema/beans</span><br><span class="line">    http://www.springframework.org/schema/beans/spring-beans.xsd</span><br><span class="line">    http://www.springframework.org/schema/context</span><br><span class="line">    http://www.springframework.org/schema/context/spring-context.xsd</span><br><span class="line">    http://www.springframework.org/schema/tx</span><br><span class="line">    http://www.springframework.org/schema/tx/spring-tx.xsd&quot;&gt;</span><br><span class="line">    &lt;!-- 扫描service包下所有使用注解的类型 --&gt;</span><br><span class="line">    &lt;context:component-scan base-package=&quot;wang.beastxw.javao2o.service&quot; /&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!-- 配置事务管理器 --&gt;</span><br><span class="line">    &lt;bean id=&quot;transactionManager&quot;</span><br><span class="line">          class=&quot;org.springframework.jdbc.datasource.DataSourceTransactionManager&quot;&gt;</span><br><span class="line">        &lt;!-- 注入数据库连接池 --&gt;</span><br><span class="line">        &lt;property name=&quot;dataSource&quot; ref=&quot;dataSource&quot; /&gt;</span><br><span class="line">    &lt;/bean&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!-- 配置基于注解的声明式事务 --&gt;</span><br><span class="line">    &lt;tx:annotation-driven transaction-manager=&quot;transactionManager&quot; /&gt;</span><br><span class="line">&lt;/beans&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="5-创建spring-web-xml"><a href="#5-创建spring-web-xml" class="headerlink" title="5.创建spring-web.xml"></a>5.创建spring-web.xml</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">// src/main/resources/spring/spring-web.xml</span><br><span class="line"></span><br><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span><br><span class="line">&lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;</span><br><span class="line">       xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:context=&quot;http://www.springframework.org/schema/context&quot;</span><br><span class="line">       xmlns:mvc=&quot;http://www.springframework.org/schema/mvc&quot;</span><br><span class="line">       xsi:schemaLocation=&quot;http://www.springframework.org/schema/beans</span><br><span class="line">    http://www.springframework.org/schema/beans/spring-beans.xsd</span><br><span class="line">    http://www.springframework.org/schema/context</span><br><span class="line">    http://www.springframework.org/schema/context/spring-context.xsd</span><br><span class="line">    http://www.springframework.org/schema/mvc</span><br><span class="line">    http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd&quot;&gt;</span><br><span class="line">    &lt;!-- 配置SpringMVC --&gt;</span><br><span class="line">    &lt;!-- 1.开启SpringMVC注解模式 --&gt;</span><br><span class="line">    &lt;mvc:annotation-driven /&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!-- 2.静态资源默认servlet配置 (1)加入对静态资源的处理：js,gif,png (2)允许使用&quot;/&quot;做整体映射 --&gt;</span><br><span class="line">    &lt;mvc:resources mapping=&quot;/resources/**&quot; location=&quot;/resources/&quot; /&gt;</span><br><span class="line">    &lt;mvc:default-servlet-handler /&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!-- 3.定义视图解析器 --&gt;</span><br><span class="line">    &lt;!-- 不用jsp，通过结果返回数据，所以是.html --&gt;</span><br><span class="line">    &lt;bean id=&quot;viewResolver&quot;</span><br><span class="line">          class=&quot;org.springframework.web.servlet.view.InternalResourceViewResolver&quot;&gt;</span><br><span class="line">        &lt;property name=&quot;prefix&quot; value=&quot;/WEB-INF/html/&quot;&gt;&lt;/property&gt;</span><br><span class="line">        &lt;property name=&quot;suffix&quot; value=&quot;.html&quot;&gt;&lt;/property&gt;</span><br><span class="line">    &lt;/bean&gt;</span><br><span class="line">  </span><br><span class="line">    &lt;!-- 4.扫描web相关的bean --&gt;</span><br><span class="line">    &lt;context:component-scan base-package=&quot;wang.beastxw.javao2o.web&quot; /&gt;</span><br><span class="line">&lt;/beans&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="6-修改web-xml"><a href="#6-修改web-xml" class="headerlink" title="6.修改web.xml"></a>6.修改web.xml</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">// 修改web.xml</span><br><span class="line"></span><br><span class="line">&lt;web-app xmlns=&quot;http://xmlns.jcp.org/xml/ns/javaee&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span><br><span class="line">         xsi:schemaLocation=&quot;http://xmlns.jcp.org/xml/ns/javaee</span><br><span class="line">                      http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd&quot;</span><br><span class="line">         version=&quot;3.1&quot; metadata-complete=&quot;true&quot;&gt;</span><br><span class="line">  &lt;display-name&gt;Archetype Created Web Application&lt;/display-name&gt;</span><br><span class="line">    &lt;!--默认访问的文件--&gt;</span><br><span class="line">    &lt;welcome-file-list&gt;</span><br><span class="line">        &lt;welcome-file&gt;index.jsp&lt;/welcome-file&gt;</span><br><span class="line">    &lt;/welcome-file-list&gt;</span><br><span class="line">    &lt;!--把之前spring文件连接起来--&gt;</span><br><span class="line">    &lt;!--一个servlet对应一个mapper--&gt;</span><br><span class="line">    &lt;servlet&gt;</span><br><span class="line">        &lt;servlet-name&gt;spring-dispatcher&lt;/servlet-name&gt;</span><br><span class="line">        &lt;servlet-class&gt;org.springframework.web.servlet.DispatcherServlet&lt;/servlet-class&gt;</span><br><span class="line">        &lt;init-param&gt;</span><br><span class="line">            &lt;param-name&gt;contextConfigLocation&lt;/param-name&gt;</span><br><span class="line">            &lt;param-value&gt;classpath:spring/spring-*.xml&lt;/param-value&gt;</span><br><span class="line">        &lt;/init-param&gt;</span><br><span class="line">    &lt;/servlet&gt;</span><br><span class="line">    &lt;servlet-mapping&gt;</span><br><span class="line">        &lt;servlet-name&gt;spring-dispatcher&lt;/servlet-name&gt;</span><br><span class="line">        &lt;!--默认匹配所有路由--&gt;</span><br><span class="line">        &lt;url-pattern&gt;/&lt;/url-pattern&gt;</span><br><span class="line">    &lt;/servlet-mapping&gt;</span><br><span class="line">&lt;/web-app&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="4-源码"><a href="#4-源码" class="headerlink" title="4.源码"></a>4.源码</h2><p>uri: <a href="https://github.com/Hericium/javao2o" target="_blank" rel="noopener">https://github.com/Hericium/javao2o</a><br>分支: feature/startmvc</p>
+<h2 id="5-添加群聊一起学习-698615299-！"><a href="#5-添加群聊一起学习-698615299-！" class="headerlink" title="5.添加群聊一起学习(698615299)！"></a>5.添加群聊一起学习(698615299)！</h2><p><img src="https://pxw-my.oss-cn-hangzhou.aliyuncs.com/blog/20190823103757.png" alt=""></p>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        <!-- Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p> -->
+        Created By Pengxingwang 
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

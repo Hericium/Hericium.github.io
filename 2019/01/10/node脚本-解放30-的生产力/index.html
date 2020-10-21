@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="彭兴旺的博客">
+    <meta name="keyword" content="全栈">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        node脚本自动生成代码 解放50%的生产力(一) - 彭兴旺的博客 | Pengxingwang&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/aircloud.css">
+    <link rel="stylesheet" href="/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 兴趣是启蒙，坚持才能有所成 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="/images/avator.JPG" />
+        </div>
+        <div class="name">
+            <i>Pengxingwang</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archive">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#生成接口URL层代码"><span class="toc-text">生成接口URL层代码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-思路"><span class="toc-text">1.思路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-实现"><span class="toc-text">2.实现</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> 兴趣是启蒙，坚持才能有所成 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        node脚本自动生成代码 解放50%的生产力(一)
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2019-01-10 20:55:49</span></span>
+        
+        <span class="attr">标签：/
+        
+        <a class="tag" href="/tags/#node" title="node">node</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content no-indent">
+        <blockquote>
+<p>发现不管是写前端(vue,react,angular)还是后端(egg,thinkphp,laravel)这种mvvm和mvc的框架，封装的越深，写起来越繁琐，特别是写管理后台的时候(ant desgin pro),模块化导致封装了很多层(接口的url层、ajax层、router、 model、view)每次添加都要文件一个个找，添加这么多层，而且基本上有50%以上的代码是重复的，一些常规的页面，除了接口和字段，别的都是一样的。直到我用到了angular 和 laravel，它们有命令行生成工具,但是对于已有的项目，再去搭建自己的脚手架不太合适，而且生成的代码不够全面，我就想自己也定制自己的生成代码的脚本来解决这个痛点,生成好之后基本改下字段就可以完事了</p>
+</blockquote>
+<h2 id="生成接口URL层代码"><a href="#生成接口URL层代码" class="headerlink" title="生成接口URL层代码"></a>生成接口URL层代码</h2><p>URL层原始代码 config.js</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">const APIV1 = &apos;/api/v1&apos;;</span><br><span class="line"></span><br><span class="line">module.exports = &#123;</span><br><span class="line">  name: &apos;管理后台&apos;,</span><br><span class="line">  logo: &apos;/logo.png&apos;,</span><br><span class="line">  openPages: [&apos;/login&apos;],</span><br><span class="line">  apiPrefix: &apos;/api/v1&apos;,</span><br><span class="line">  APIV1,</span><br><span class="line">  api: &#123;</span><br><span class="line">    // 商品管理</span><br><span class="line">    classificationItem: `$&#123;APIV1&#125;/classification`,</span><br><span class="line">    classificationBrand: `$&#123;APIV1&#125;/brand`,</span><br><span class="line">    classificationSeries: `$&#123;APIV1&#125;/brandseries`,</span><br><span class="line">    classificationGoods: `$&#123;APIV1&#125;/productClassification`,</span><br><span class="line">    classificationProperty: `$&#123;APIV1&#125;/attributeController`,</span><br><span class="line">    classificationCommodity: `$&#123;APIV1&#125;/productController`,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="1-思路"><a href="#1-思路" class="headerlink" title="1.思路"></a>1.思路</h2><p>  1.通过node 的bash交互，用户输入要生成的模块的名称，<br>  2.在该文件下面自动加入代码(倒数第二个}前面),<br>  如下：<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">用户输入的模块名: `$&#123;APIV1&#125;/用户输入的模块名`,</span><br></pre></td></tr></table></figure></p>
+<h2 id="2-实现"><a href="#2-实现" class="headerlink" title="2.实现"></a>2.实现</h2><p>  1.在项目根目录下创建如下文件：</p>
+<pre><code>—cli
+  -config.text    //源文件，把里面的代码插入到config.js
+  -index.js       //node文件
+</code></pre>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        <!-- Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p> -->
+        Created By Pengxingwang 
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>
